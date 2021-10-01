@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 6: Pass</title>
+</head>    
+ 
+<body>
+<h2>Pass Phrase By Patrick</h2>
+
+<form>
+    <label for="form1_passphrase">Secret Pass Phrase</label>
+    <input type ="password" id="form1_password" value="Let me in">
+    <label for="form1_passphrase">Enter a Phrase</label>
+    <input type ="text" id="form1_text" name="form1_password">
+</form>
+<button onclick="processPassphrase()">Check the Phrase</button>
+<p id="output">Correct: 0 --- Wrong: 0</p>
+
+<script> 
+let correct = 0;
+let wrong = 0;
+
+function processPassphrase()
+{ 
+    console.log("Getting form values")
+    value = document.getElementById("form1_password").value
+    phrase = document.getElementById("form1_text").value
+
+    out = document.getElementById("output")  
+    if(value === phrase){
+        correct += 1
+        //alert("Access Allowed")
+    }else{
+        wrong += 1;
+        //alert("Access Denied")
+    }
+    out.innerHTML = `Correct: ${correct} --- Wrong: ${wrong}`  
+    return false;
+}
+</script>
+
+</body>
+</html> 
