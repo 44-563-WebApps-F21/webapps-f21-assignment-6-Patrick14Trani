@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Page</title>
+</head>
+ 
+<body>
+
+<h2>Patrick Computes</h2>
+
+<form>
+    <label for="form1_age">Enter A Base </label>
+    <input type ="number" id="base" value=10> <br>
+
+    <label for="form1_nick">Enter an Exponent </label>
+    <input type ="number" id="exp" value=2> <br>
+</form>
+<button onclick="powers()">Compute</button>
+<p id="target"></p>
+
+<script> 
+
+function powers(){
+    let base = document.getElementById("base").value
+    let exp = document.getElementById("exp").value
+
+    let result = ""
+    for (let i = 1; i <= exp; i++) {
+        result += " " + (base ** i)
+    }
+    document.getElementById("target").innerHTML = `Powers of Base ${base}:${result}`
+}
+</script>
+
+</body>
+</html> 
