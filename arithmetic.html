@@ -18,6 +18,22 @@
 <button onclick="powers()">Compute</button>
 <p id="target"></p>
 
+<form>
+    <input type="radio" id="add" value="plus" onclick="processRadio(1)">
+    <label>+</label></br>
+
+  <input type="radio" id="sub" value="minus" onclick="processRadio(2)">
+  <label>-</label></br>
+
+  <input type="radio" id="mult" value="times" onclick="processRadio(3)">
+  <label>*</label></br>
+
+  <input type="radio" id="divi" value="divide" onclick="processRadio(4)">
+  <label>/</label></br>
+</form>
+
+<p id="target2"></p>
+
 <script> 
 
 function powers(){
@@ -29,6 +45,29 @@ function powers(){
         result += " " + (base ** i)
     }
     document.getElementById("target").innerHTML = `Powers of Base ${base}:${result}`
+}
+</script>
+
+<script>
+function processRadio(op){
+    let base = document.getElementById("base").value
+    let exp = document.getElementById("exp").value
+
+    switch(op){
+        case 1:
+            document.getElementById("target2").innerHTML = `${(base + exp)}`
+            break;
+        case 2:
+            document.getElementById("target2").innerHTML = `${(base - exp)}`
+            break;
+        case 3:
+            document.getElementById("target2").innerHTML = `${(base * exp)}`
+            break;
+        case 4:
+            document.getElementById("target2").innerHTML = `${(base / exp)}`
+            break;
+    }
+
 }
 </script>
 
