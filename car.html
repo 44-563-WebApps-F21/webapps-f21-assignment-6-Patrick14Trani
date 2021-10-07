@@ -16,7 +16,13 @@
     <label for="air">ac</label></br>
 
     <input type="checkbox" id="g" value="gps">
-    <label for="g">I want onions</label></br>
+    <label for="g">GPS</label></br>
+
+    <input type="text" id="carColor" value="Color">
+    <label for="g">Enter a property</label></br>
+    
+    <input type="text" id="carProp" value="Property">
+    <label for="g">Enter a value</label></br>    
 </form>
 <button onclick="orderCar()">Order a Car</button>
 
@@ -30,7 +36,8 @@ function orderCar(){
     my_car.electric = document.getElementById("el").checked
     my_car.ac = document.getElementById("air").checked
     my_car.gps = document.getElementById("g").checked
-    document.getElementById("result").innerHTML = `My car will have-\nElectric: ${my_car.electric}\nAC: ${my_car.ac}\nGPS: ${my_car.gps}`
+    document.getElementById("result").innerHTML = `My car will have-\nElectric: ${my_car.electric}\nAC: ${my_car.ac}\nGPS: ${my_car.gps}\nColor:
+        ${document.getElementById("carColor").value}\nPropert: ${document.getElementById("carProp").value}`
 }
 </script>
 
